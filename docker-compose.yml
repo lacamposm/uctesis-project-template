@@ -1,0 +1,19 @@
+services:
+  ucentral-pyspark-project:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ucentral-pyspark-project
+    container_name: ucentral-pyspark-project
+    working_dir: /ucentral-tesis-project
+    ports:
+      - "5678:5678" # Debugging
+      - "8501:8501" # Streamlit
+      - "8888:8888" # Jupyter-Notebook
+      - "4040:4040" # SparkUI,
+    volumes:
+      - ./:/ucentral-tesis-project
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONPATH=/ucentral-tesis-project
+    command: tail -f /dev/null

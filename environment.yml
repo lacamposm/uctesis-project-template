@@ -1,0 +1,14 @@
+name: ucentral-project-env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - pip
+  - python=3.12.10
+  - streamlit
+  - pyspark=3.5.5   # Spark
+  - pip:
+    - debugpy       # Debugging
+    - jupyter       # Notebooks
+    - sphinx        # Documentation
+    - black         # Code formatting
